@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Cypher</title>
+    <link rel="icon" href="images\logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+</head>
+<body>
+    <header>
+    </header>
+        <main class="main-content">
+            <div class="inputDiv">
+                <form class="inputForm">
+                    <label for="edit-website">Site (sem www.):</label>
+                    <input type="text" id="site" name="site">
+                </form>
+                <form class="inputForm">
+                    <label for="edit-password">Password:</label>
+                    <input type="text" id="password" name="password">
+                </form>
+                    <input type="submit" id="submitButton" class="submitButton" value="Submit">
+            </div>
+            <div class="outputDiv">
+                <label for="cypherResult">Cyphered Password:</label>
+                <input type="text" id="cypheredPassword" name="password" readonly>
+            </div>
+        </main>        
+    <footer>
+    </footer>
+</body>
+    <script src="script.js"></script>
+</html>

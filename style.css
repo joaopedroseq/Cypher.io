@@ -1,0 +1,22 @@
+main{
+    display: inline-flex;
+    gap: 5%;
+}
+
+.inputDiv{
+    display: inline-block;
+}
+
+.inputForm{
+    display: grid;
+    gap: 5%;
+}
+
+input{
+    width: 300px;
+}
+
+.submitButton{
+    
+    width: auto;
+}
