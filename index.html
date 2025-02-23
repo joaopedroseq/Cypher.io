@@ -26,7 +26,7 @@
             <div class="inputDiv">
                 <form class="inputForm">
                     <a for="edit-website">Site (sem www.):</a>
-                    <input type="text" id="site" name="site">
+                    <input class="site" type="email" id="site" name="site" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                     <a for="edit-password">Password:</a>
                     <input type="text" id="password" name="password">
                     <input type="button" id="submitButton" class="submitButton" value="Submit">
@@ -35,6 +35,8 @@
             <div class="outputDiv">
                 <a for="cypherResult">Cyphered Password:</a>
                 <input type="text" id="cypheredPassword" name="password" readonly>
+            </div>
+            <div class="websites">
             </div>
         </main>        
     <footer>

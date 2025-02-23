@@ -23,6 +23,10 @@ body{
     gap: 5%;
 }
 
+.site{
+    text-transform: lowercase;
+}
+
 label{
     width: 80vw;
     font-size: xx-large;
