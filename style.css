@@ -1,6 +1,10 @@
-main{
-    display: inline-flex;
-    gap: 5%;
+.main-content{
+    display: grid;
+    gap: 20%;
+}
+
+body{
+    display: block;
 }
 
 .inputDiv{
@@ -12,11 +16,23 @@ main{
     gap: 5%;
 }
 
+label{
+    width: 80vw;
+    font-size: xx-large;
+}
+
 input{
-    width: 300px;
+    width: 80vw;
+    height: 15vh;
+    font-size: xx-large;
 }
 
 .submitButton{
-    
-    width: auto;
+    width: 80vw;
+    height: 15vh;
+}
+
+.outputDiv{
+    display: grid;
+    gap: 10%;
 }

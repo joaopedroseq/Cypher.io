@@ -31,6 +31,7 @@ function encodePassword() {
   }, timeout);
 }
 
+
 function getCypher(websiteName) {
   let cypher = 0;
     for (let letter of websiteName) {

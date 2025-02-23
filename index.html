@@ -3,21 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Cypher</title>
-    <link rel="icon" href="images\logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="/manifest.json">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js').then(registration => {
-              console.log('Service Worker registered with scope:', registration.scope);
-            }).catch(error => {
-              console.log('Service Worker registration failed:', error);
-            });
-          });
-        }
-      </script>
 </head>
 <body>
     <header>
@@ -25,17 +12,15 @@
         <main class="main-content">
             <div class="inputDiv">
                 <form class="inputForm">
-                    <label for="edit-website">Site (sem www.):</label>
+                    <a for="edit-website">Site (sem www.):</a>
                     <input type="text" id="site" name="site">
-                </form>
-                <form class="inputForm">
-                    <label for="edit-password">Password:</label>
+                    <a for="edit-password">Password:</a>
                     <input type="text" id="password" name="password">
-                </form>
-                    <input type="submit" id="submitButton" class="submitButton" value="Submit">
+                    <input type="button" id="submitButton" class="submitButton" value="Submit">
+                  </form>
             </div>
             <div class="outputDiv">
-                <label for="cypherResult">Cyphered Password:</label>
+                <a for="cypherResult">Cyphered Password:</a>
                 <input type="text" id="cypheredPassword" name="password" readonly>
             </div>
         </main>        
