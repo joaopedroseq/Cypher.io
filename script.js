@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 document.addEventListener("DOMContentLoaded", function () {
   const all_letter_lower = "abcdefghijklmnopqrstuvwxyz";
   const all_letter_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -10,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cypheredPassword = document.getElementById("cypheredPassword");
 
   submitButton.addEventListener("click", encodePassword);
+});
 
   function encodePassword() {
     let passwordUncyphered = passwordBox.value;
@@ -90,4 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
       return (s % 2147483647) / 2147483647;
     };
   }
-});
+
+  // Escrever o JSON em um arquivo
+  fs.writeFile('websites.json', dadosJSON, (err) => {
+    if (err) throw err;
+    console.log('Dados salvos em dados.json');
+  });
