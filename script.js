@@ -9,16 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const website = document.getElementById("site");
   const passwordBox = document.getElementById("password");
   const submitButton = document.getElementById("submitButton");
-  const cypheredPassword = document.getElementById("cypheredPassword");
+  
 
-  submitButton.addEventListener("click", encodePassword);
+  submitButton.addEventListener("click", encodePassword(passwordBox.value, website.value.toLowerCase()));
 });
 
-  function encodePassword() {
-    let passwordUncyphered = passwordBox.value;
-    let websiteName = website.value;
+  function encodePassword(passwordUncyphered, websiteName) {
     let cypher = getCypher(websiteName);
     let passwordCyphered = codifyPassword(passwordUncyphered, cypher);
+    const cypheredPassword = document.getElementById("cypheredPassword");
     cypheredPassword.value = passwordCyphered;
     cypheredPassword.select();
     document.execCommand("copy");
@@ -95,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Escrever o JSON em um arquivo
-  fs.writeFile('websites.json', dadosJSON, (err) => {
-    if (err) throw err;
+  fs.writeFile('websites.json', dadosJSON, (error) => {
+    if (error) throw error;
     console.log('Dados salvos em dados.json');
   });
