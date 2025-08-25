@@ -5,6 +5,7 @@ const urlsToCache = [
     '/style.css',
     '/script.js',
     '/manifest.json',
+    '/fuscus_vulpes.png',
     '/icons/launchericon-48-48.png',
     '/icons/launchericon-72-72.png',
     '/icons/launchericon-96-96.png',

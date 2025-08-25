@@ -1,17 +1,18 @@
-import fs from 'fs';
+const all_letter_lower = "abcdefghijklmnopqrstuvwxyz";
+const all_letter_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const all_numbers = "0123456789";
+const all_symbols = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const all_letter_lower = "abcdefghijklmnopqrstuvwxyz";
-  const all_letter_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const all_numbers = "0123456789";
-  const all_symbols = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-
   const website = document.getElementById("site");
   const passwordBox = document.getElementById("password");
   const submitButton = document.getElementById("submitButton");
   
 
-  submitButton.addEventListener("click", encodePassword(passwordBox.value, website.value.toLowerCase()));
+  submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    encodePassword(passwordBox.value, website.value.toLowerCase());
+  });
 });
 
   function encodePassword(passwordUncyphered, websiteName) {
@@ -22,13 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cypheredPassword.select();
     document.execCommand("copy");
     alert("Valor copiado para a área de transferência");
-    // Define um tempo (por exemplo, 5 segundos = 5000 milissegundos)
-    const timeout = 5000;
-
-    // Apaga o valor do campo de entrada após x tempo
-    setTimeout(function () {
-      cypheredPassword.value = "";
-    }, timeout);
   }
 
   function getCypher(websiteName) {
@@ -68,7 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Função para baralhar uma string com uma semente específica
   function shuffleString(str, seed) {
     let array = str.split("");
-    const rng = seedrandom(seed);
+    // Ensure seed is always a string
+    const rng = seedrandom(String(seed));
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(rng() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -92,9 +87,3 @@ document.addEventListener("DOMContentLoaded", function () {
       return (s % 2147483647) / 2147483647;
     };
   }
-
-  // Escrever o JSON em um arquivo
-  fs.writeFile('websites.json', dadosJSON, (error) => {
-    if (error) throw error;
-    console.log('Dados salvos em dados.json');
-  });

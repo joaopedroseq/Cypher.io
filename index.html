@@ -21,30 +21,32 @@
 </head>
 <body>
     <header>
+        <h1>Cypher 2.0</h1>
     </header>
         <main class="main-content">
             <div class="inputDiv">
                 <form class="inputForm">
-                    <a for="edit-website">Site (sem www.):</a>
+                    <label for="site">Site (sem www.):</label>
                     <input class="site" type="email" id="site" name="site" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                    <a for="edit-password">Password:</a>
+                    <label for="password">Password:</label>
                     <input type="text" id="password" name="password">
                     <div class="buttons">
                         <input type="button" id="submitButton" class="submitButton" value="Submit">
-                        <input type="button" id="submitAndSaveButton" class="submitAndSaveButton" value="SubmitSave">
                     </div>
                   </form>
             </div>
             <div class="outputDiv">
-                <a for="cypherResult">Cyphered Password:</a>
+                <label for="cypheredPassword">Cyphered Password:</label>
                 <input type="text" id="cypheredPassword" name="password" readonly>
             </div>
                 <div class="websites">
             </div>
+            <div class="logo">
+                <img src="fuscus_vulpes.png">
+                <a>Fuscus Vulpes</a>
+            </div>
         </main>        
     <footer>
-        <img src="fuscus_vulpes.png">
-        <a>Fuscus Vulpes</a>
     </footer>
 </body>
 </html>
